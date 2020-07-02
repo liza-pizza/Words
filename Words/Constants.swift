@@ -11,6 +11,7 @@ import Foundation
 struct K {
     static let wordCell = "WordTableViewCell"
     static let goToAddWord = "GoToAddWord"
+    static let goToWordDetails = "GoToWordDetails"
     static let unsplashAccessKey = "ADD ACCESS KEY HERE"
     static let unsplashSecretKey = "ADD SECRET KEY HERE"
 }

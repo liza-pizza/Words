@@ -15,7 +15,6 @@ class NewWordController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var imageurl: URL? = nil
-    //    var wordInfoArray = [WordInfo]()
     
     @IBOutlet weak var unsplashphotoImageView: UIImageView!
     @IBOutlet weak var newWordTextField: UITextField!
@@ -28,7 +27,7 @@ class NewWordController: UIViewController {
         
     }
     
-    
+    //MARK: - Add New Word
     
     @IBAction func submitPressed(_ sender: Any) {
         
@@ -60,7 +59,6 @@ class NewWordController: UIViewController {
         }
         
     }
-    
     
     
     
@@ -107,9 +105,6 @@ class NewWordController: UIViewController {
     
     
 }
-
-
-
 
 
 

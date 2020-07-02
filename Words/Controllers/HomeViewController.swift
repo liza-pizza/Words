@@ -13,17 +13,13 @@ import CoreData
 class HomeViewController: UITableViewController {
     
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    let imageArray = [#imageLiteral(resourceName: "image1"), #imageLiteral(resourceName: "image2"), #imageLiteral(resourceName: "image3")]
     var wordArray = [WordInfo]()
     override func viewDidLoad() {
-        print("View did Load")
         super.viewDidLoad()
         tableView.separatorColor = UIColor.clear
         loadWords()
-        print(dataFilePath)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,11 +41,32 @@ class HomeViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - TableView Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.goToWordDetails, sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.goToWordDetails{
+            let destinationVC = segue.destination as! WordDetailsController
+            
+            if let indexPath = tableView.indexPathForSelectedRow{
+                destinationVC.selectedWord = wordArray[indexPath.row]
+            }
+        }
+
+    }
+    
     //MARK: - Add New Word Segue
     @IBAction func addNewWord(_ sender: UIBarButtonItem) {
         
         self.performSegue(withIdentifier: K.goToAddWord, sender: self)
         }
+    
+    
+    
     
     //MARK: - Model Manipulation Methods
     
@@ -64,8 +81,24 @@ class HomeViewController: UITableViewController {
       
     }
     
- 
+  
+    
     
 }
 
 
+//func downloadImage(with url: URL)  {
+//      URLSession.shared.dataTask(with: url) { (data, response, error) in
+//          if error != nil {
+//              print("error hereeeee")
+//              return
+//          }
+//          
+//          DispatchQueue.main.async {
+//               self.cellImage = UIImage(data: data!)!
+//          }
+//         
+//      }
+//  .resume()
+//  }
+//  

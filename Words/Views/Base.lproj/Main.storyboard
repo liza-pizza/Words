@@ -32,8 +32,8 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meaning of word goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-bb-hx1">
-                                            <rect key="frame" x="102.5" y="118" width="209" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meaning of word goes here" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-bb-hx1">
+                                            <rect key="frame" x="20" y="119.5" width="374" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -43,11 +43,15 @@
                                         <constraint firstAttribute="trailing" secondItem="iVz-dq-BKp" secondAttribute="trailing" constant="10" id="62O-wt-HHO"/>
                                         <constraint firstAttribute="bottom" secondItem="iVz-dq-BKp" secondAttribute="bottom" constant="10" id="7BR-FF-uUC"/>
                                         <constraint firstItem="xJt-bb-hx1" firstAttribute="centerX" secondItem="Iae-Fp-j5s" secondAttribute="centerX" id="Gwk-ym-9B1"/>
+                                        <constraint firstItem="xJt-bb-hx1" firstAttribute="leading" secondItem="Iae-Fp-j5s" secondAttribute="leading" constant="20" id="NZO-t4-qah"/>
                                         <constraint firstItem="xJt-bb-hx1" firstAttribute="bottom" secondItem="Iae-Fp-j5s" secondAttribute="bottomMargin" id="NzI-yQ-duT"/>
+                                        <constraint firstAttribute="trailing" secondItem="xJt-bb-hx1" secondAttribute="trailing" constant="20" id="X0b-wB-Hec"/>
                                         <constraint firstItem="NYf-Mb-zy2" firstAttribute="centerY" secondItem="Iae-Fp-j5s" secondAttribute="centerY" id="Zmx-hM-lhU"/>
+                                        <constraint firstAttribute="bottom" secondItem="xJt-bb-hx1" secondAttribute="bottom" constant="10" id="aBZ-zc-J8B"/>
                                         <constraint firstItem="iVz-dq-BKp" firstAttribute="leading" secondItem="Iae-Fp-j5s" secondAttribute="leading" constant="10" id="ehJ-ke-J80"/>
                                         <constraint firstItem="NYf-Mb-zy2" firstAttribute="centerX" secondItem="Iae-Fp-j5s" secondAttribute="centerX" id="kSu-jy-RAD"/>
                                         <constraint firstItem="iVz-dq-BKp" firstAttribute="top" secondItem="Iae-Fp-j5s" secondAttribute="top" constant="10" id="p7l-G6-40v"/>
+                                        <constraint firstItem="xJt-bb-hx1" firstAttribute="centerX" secondItem="Iae-Fp-j5s" secondAttribute="centerX" id="vlY-sH-wKk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -77,11 +81,58 @@
                     </navigationItem>
                     <connections>
                         <segue destination="P12-tV-MGO" kind="show" identifier="GoToAddWord" id="EDE-6B-QX7"/>
+                        <segue destination="nqz-5w-Bh6" kind="show" identifier="GoToWordDetails" id="96h-m0-V2a"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0A-7P-lU8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1250.7246376811595" y="124.55357142857142"/>
+        </scene>
+        <!--Word Details Controller-->
+        <scene sceneID="coj-fU-yZV">
+            <objects>
+                <viewController id="nqz-5w-Bh6" customClass="WordDetailsController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LWT-hx-CWK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjD-hv-Y7L">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scintillating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAO-MB-53z">
+                                <rect key="frame" x="26" y="324" width="368" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k36-qw-iTO">
+                                <rect key="frame" x="26" y="452" width="356" height="386"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sjD-hv-Y7L" firstAttribute="trailing" secondItem="hnu-uM-IKc" secondAttribute="trailing" id="Ew2-27-uXm"/>
+                            <constraint firstAttribute="baseline" secondItem="sjD-hv-Y7L" secondAttribute="bottom" symbolic="YES" id="Mm1-oF-aNF"/>
+                            <constraint firstItem="sjD-hv-Y7L" firstAttribute="leading" secondItem="hnu-uM-IKc" secondAttribute="leading" id="ahP-sY-c8Q"/>
+                            <constraint firstItem="sjD-hv-Y7L" firstAttribute="top" secondItem="LWT-hx-CWK" secondAttribute="firstBaseline" symbolic="YES" id="nN6-qN-1KH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hnu-uM-IKc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Pm-wC-JMW"/>
+                    <connections>
+                        <outlet property="bgImage" destination="sjD-hv-Y7L" id="Yar-nR-3fR"/>
+                        <outlet property="wordDefinition" destination="k36-qw-iTO" id="qdb-h3-joT"/>
+                        <outlet property="wordTitle" destination="uAO-MB-53z" id="qBw-6A-tjK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTL-88-6ZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2347.826086956522" y="782.8125"/>
         </scene>
         <!--New Word Controller-->
         <scene sceneID="7z1-W9-fZK">
@@ -91,11 +142,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42D-z3-z1X">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new word" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42D-z3-z1X">
                                 <rect key="frame" x="20" y="503" width="364" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Definition " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8Z-7k-iZn">
                                 <rect key="frame" x="20" y="565" width="374" height="33.5"/>
@@ -104,11 +155,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meaning " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3B2-JP-eAK">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meaning " textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3B2-JP-eAK">
                                 <rect key="frame" x="20" y="607" width="364" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irw-NV-dmy">
                                 <rect key="frame" x="20" y="683" width="150" height="34"/>
@@ -178,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Eh-Ac-BAz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105.7971014492755" y="795.53571428571422"/>
+            <point key="canvasLocation" x="2348" y="-492"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oug-Ku-ot6">
