@@ -16,9 +16,9 @@ class WordDetailsController: UIViewController {
     
     
     private var imageDataTask: URLSessionDataTask?
-
+    
     var selectedWord: WordInfo?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +38,7 @@ class WordDetailsController: UIViewController {
     func downloadPhoto(_ url: URL) {
         
         
-         imageDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
+        imageDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
             
             guard let strongSelf = self else { return }
             

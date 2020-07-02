@@ -12,8 +12,7 @@ import CoreData
 
 class HomeViewController: UITableViewController {
     
-    
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var wordArray = [WordInfo]()
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class HomeViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-    
+        
         loadWords()
         tableView.reloadData()
     }
@@ -56,14 +55,14 @@ class HomeViewController: UITableViewController {
                 destinationVC.selectedWord = wordArray[indexPath.row]
             }
         }
-
+        
     }
     
     //MARK: - Add New Word Segue
     @IBAction func addNewWord(_ sender: UIBarButtonItem) {
         
         self.performSegue(withIdentifier: K.goToAddWord, sender: self)
-        }
+    }
     
     
     
@@ -78,10 +77,10 @@ class HomeViewController: UITableViewController {
             print("error loading stuff  \(error)")
         }
         
-      
+        
     }
     
-  
+    
     
     
 }

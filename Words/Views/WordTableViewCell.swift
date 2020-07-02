@@ -16,17 +16,17 @@ class WordTableViewCell: UITableViewCell {
     @IBOutlet weak var wordDefinition: UILabel!
     
     private var imageDataTask: URLSessionDataTask?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
     
     func configureCell(imageURL: URL, title: String , definition: String){
         
@@ -35,10 +35,10 @@ class WordTableViewCell: UITableViewCell {
         self.wordDefinition.text = definition
         self.wordImageView.contentMode = UIView.ContentMode.scaleAspectFill
         self.wordImageView.layer.cornerRadius = 10
-
-    }
         
-
+    }
+    
+    
     func downloadPhoto(_ url: URL) {
         
         
