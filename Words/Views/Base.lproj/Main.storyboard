@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Wordy-->
         <scene sceneID="AXo-aV-GvT">
             <objects>
                 <tableViewController id="D1c-AV-ZtQ" customClass="HomeViewController" customModule="Words" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,8 +27,14 @@
                                             <rect key="frame" x="10" y="10" width="394" height="130"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scintillating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYf-Mb-zy2">
-                                            <rect key="frame" x="154" y="62" width="106.5" height="26"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                            <rect key="frame" x="151.5" y="62" width="111" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meaning of word goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-bb-hx1">
+                                            <rect key="frame" x="102.5" y="118" width="209" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -36,6 +42,8 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="iVz-dq-BKp" secondAttribute="trailing" constant="10" id="62O-wt-HHO"/>
                                         <constraint firstAttribute="bottom" secondItem="iVz-dq-BKp" secondAttribute="bottom" constant="10" id="7BR-FF-uUC"/>
+                                        <constraint firstItem="xJt-bb-hx1" firstAttribute="centerX" secondItem="Iae-Fp-j5s" secondAttribute="centerX" id="Gwk-ym-9B1"/>
+                                        <constraint firstItem="xJt-bb-hx1" firstAttribute="bottom" secondItem="Iae-Fp-j5s" secondAttribute="bottomMargin" id="NzI-yQ-duT"/>
                                         <constraint firstItem="NYf-Mb-zy2" firstAttribute="centerY" secondItem="Iae-Fp-j5s" secondAttribute="centerY" id="Zmx-hM-lhU"/>
                                         <constraint firstItem="iVz-dq-BKp" firstAttribute="leading" secondItem="Iae-Fp-j5s" secondAttribute="leading" constant="10" id="ehJ-ke-J80"/>
                                         <constraint firstItem="NYf-Mb-zy2" firstAttribute="centerX" secondItem="Iae-Fp-j5s" secondAttribute="centerX" id="kSu-jy-RAD"/>
@@ -43,6 +51,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="wordDefinition" destination="xJt-bb-hx1" id="b0E-fY-2q6"/>
                                     <outlet property="wordImageView" destination="iVz-dq-BKp" id="0Db-Li-8OW"/>
                                     <outlet property="wordTitle" destination="NYf-Mb-zy2" id="45F-ya-4pG"/>
                                 </connections>
@@ -58,7 +67,7 @@
                             <outlet property="delegate" destination="D1c-AV-ZtQ" id="iGr-wo-lTH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="JRX-2C-Aue">
+                    <navigationItem key="navigationItem" title="Wordy" id="JRX-2C-Aue">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UD9-bw-psW">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -147,7 +156,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpT-tF-jfU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="tpT-tF-jfU">
                                 <rect key="frame" x="10" y="170" width="394" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -191,6 +200,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image2" width="640" height="963"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

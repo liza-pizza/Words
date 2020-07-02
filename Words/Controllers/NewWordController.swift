@@ -41,7 +41,7 @@ class NewWordController: UIViewController {
         }
         else
         {
-            print("error or smthng")
+            print("one or both text fields are empty")
         }
         navigationController?.popViewController(animated: true)
     
