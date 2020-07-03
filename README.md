@@ -18,4 +18,4 @@ A simple vocabulary building app with an image picker to help create a better vi
 
 ### Demo 
 
-![Word App Demo](appDemo2.gif)
+![Word App Demo](appdemo2.gif)
