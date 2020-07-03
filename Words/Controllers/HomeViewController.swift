@@ -13,18 +13,19 @@ import CoreData
 class HomeViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+
     var wordArray = [WordInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorColor = UIColor.clear
         loadWords()
+        print(dataFilePath)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         loadWords()
-        tableView.reloadData()
     }
     
     //MARK: - TableView Datasource Methods
@@ -38,6 +39,20 @@ class HomeViewController: UITableViewController {
         if let cellTitle = wordArray[indexPath.row].title,let cellDef = wordArray[indexPath.row].definition,let cellImageURL = wordArray[indexPath.row].bgImage{
             cell.configureCell(imageURL: cellImageURL, title: cellTitle, definition: cellDef )}
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, actionPerformed: (Bool) -> Void) in
+            self.context.delete(self.wordArray[indexPath.row])
+            self.wordArray.remove(at: indexPath.row)
+            self.saveWordInfo()
+            print("Delete")
+        }
+        
+        delete.backgroundColor = #colorLiteral(red: 0.7803921569, green: 0, blue: 0.2235294118, alpha: 1)
+        delete.image = UIImage(systemName: "trash")
+        return UISwipeActionsConfiguration(actions: [delete])
     }
     
     //MARK: - TableView Delegate Methods
@@ -77,27 +92,23 @@ class HomeViewController: UITableViewController {
             print("error loading stuff  \(error)")
         }
         
-        
+        tableView.reloadData()
+
     }
     
+    func saveWordInfo(){
+        
+        do{
+            try context.save()
+        }catch{
+            print("error saving category \(error)")
+        }
+        tableView.reloadData()
+
+    }
     
     
     
 }
 
 
-//func downloadImage(with url: URL)  {
-//      URLSession.shared.dataTask(with: url) { (data, response, error) in
-//          if error != nil {
-//              print("error hereeeee")
-//              return
-//          }
-//          
-//          DispatchQueue.main.async {
-//               self.cellImage = UIImage(data: data!)!
-//          }
-//         
-//      }
-//  .resume()
-//  }
-//  
