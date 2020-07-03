@@ -16,9 +16,9 @@ class NewWordController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var imageurl: URL? = nil
     
-    @IBOutlet weak var unsplashphotoImageView: UIImageView!
     @IBOutlet weak var newWordTextField: UITextField!
     @IBOutlet weak var definitionTextField: UITextField!
+    @IBOutlet weak var unsplashphotoImageView: UnsplashImageView!
     
     
     override func viewDidLoad() {

@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iVz-dq-BKp">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iVz-dq-BKp" customClass="UnsplashImageView" customModule="Words" customModuleProvider="target">
                                             <rect key="frame" x="10" y="10" width="394" height="130"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scintillating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYf-Mb-zy2">
@@ -56,7 +56,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="wordDefinition" destination="xJt-bb-hx1" id="b0E-fY-2q6"/>
-                                    <outlet property="wordImageView" destination="iVz-dq-BKp" id="0Db-Li-8OW"/>
+                                    <outlet property="wordImageView" destination="iVz-dq-BKp" id="xM2-Ni-V3D"/>
                                     <outlet property="wordTitle" destination="NYf-Mb-zy2" id="45F-ya-4pG"/>
                                 </connections>
                             </tableViewCell>
@@ -96,7 +96,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjD-hv-Y7L">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjD-hv-Y7L" customClass="UnsplashImageView" customModule="Words" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scintillating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAO-MB-53z">
@@ -125,7 +125,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5Pm-wC-JMW"/>
                     <connections>
-                        <outlet property="bgImage" destination="sjD-hv-Y7L" id="Yar-nR-3fR"/>
+                        <outlet property="bgImage" destination="sjD-hv-Y7L" id="yiS-za-kTr"/>
                         <outlet property="wordDefinition" destination="k36-qw-iTO" id="qdb-h3-joT"/>
                         <outlet property="wordTitle" destination="uAO-MB-53z" id="qBw-6A-tjK"/>
                     </connections>
@@ -207,7 +207,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="tpT-tF-jfU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="tpT-tF-jfU" customClass="UnsplashImageView" customModule="Words" customModuleProvider="target">
                                 <rect key="frame" x="10" y="170" width="394" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -224,7 +224,7 @@
                     <connections>
                         <outlet property="definitionTextField" destination="3B2-JP-eAK" id="gZB-Hh-h2B"/>
                         <outlet property="newWordTextField" destination="42D-z3-z1X" id="ryY-d6-fW8"/>
-                        <outlet property="unsplashphotoImageView" destination="tpT-tF-jfU" id="0sG-G8-ubw"/>
+                        <outlet property="unsplashphotoImageView" destination="tpT-tF-jfU" id="Ydn-BP-Fg8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Eh-Ac-BAz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

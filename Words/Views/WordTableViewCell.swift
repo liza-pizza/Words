@@ -11,9 +11,9 @@ import UnsplashPhotoPicker
 
 class WordTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var wordImageView: UIImageView!
     @IBOutlet weak var wordTitle: UILabel!
     @IBOutlet weak var wordDefinition: UILabel!
+    @IBOutlet weak var wordImageView: UnsplashImageView!
     
     private var imageDataTask: URLSessionDataTask?
     
