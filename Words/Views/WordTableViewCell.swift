@@ -30,7 +30,7 @@ class WordTableViewCell: UITableViewCell {
     
     func configureCell(imageURL: URL, title: String , definition: String){
         
-        self.downloadPhoto(imageURL)
+        wordImageView.downloadPhoto(imageURL)
         self.wordTitle.text = title
         self.wordDefinition.text = definition
         self.wordImageView.contentMode = UIView.ContentMode.scaleAspectFill
@@ -39,24 +39,6 @@ class WordTableViewCell: UITableViewCell {
     }
     
     
-    func downloadPhoto(_ url: URL) {
-        
-        
-        imageDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
-            guard let strongSelf = self else { return }
-            
-            strongSelf.imageDataTask = nil
-            
-            guard let data = data, let image = UIImage(data: data), error == nil else { return }
-            
-            DispatchQueue.main.async {
-                UIView.transition(with: strongSelf.wordImageView, duration: 0.25, options: [.transitionCrossDissolve], animations: {
-                    strongSelf.wordImageView.image = image
-                }, completion: nil)
-            }
-        }
-        
-        imageDataTask?.resume()
-    }
+
     
 }

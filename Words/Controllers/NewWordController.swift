@@ -76,33 +76,7 @@ class NewWordController: UIViewController {
         present(unsplashPhotoPicker, animated: true, completion: nil)
         
     }
-    
-    private var imageDataTask: URLSessionDataTask?
-    
-    
-    func downloadPhoto(_ photo: UnsplashPhoto) {
-        guard let url = photo.urls[.regular] else { return }
-        
-        
-        imageDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
-            guard let strongSelf = self else { return }
-            
-            strongSelf.imageDataTask = nil
-            
-            guard let data = data, let image = UIImage(data: data), error == nil else { return }
-            
-            DispatchQueue.main.async {
-                UIView.transition(with: strongSelf.unsplashphotoImageView, duration: 0.25, options: [.transitionCrossDissolve], animations: {
-                    strongSelf.unsplashphotoImageView.image = image
-                }, completion: nil)
-            }
-        }
-        
-        imageDataTask?.resume()
-    }
-    
-    
-    
+
     
 }
 
@@ -116,7 +90,7 @@ extension NewWordController: UnsplashPhotoPickerDelegate{
         
         let photo = photos[0]
         imageurl = photo.urls[.regular]
-        downloadPhoto(photo)
+        unsplashphotoImageView.downloadPhoto(photo)
     }
     
     

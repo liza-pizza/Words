@@ -19,6 +19,7 @@
 		6E775D69249B98B9004BBD76 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E775D68249B98B9004BBD76 /* Constants.swift */; };
 		6E775D6D24A22567004BBD76 /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E775D6C24A22567004BBD76 /* WordTableViewCell.swift */; };
 		6EB6144224AE077900B6FA1F /* WordDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB6144124AE077900B6FA1F /* WordDetailsController.swift */; };
+		6EB6144424AEFB7900B6FA1F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB6144324AEFB7900B6FA1F /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		6E775D68249B98B9004BBD76 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6E775D6C24A22567004BBD76 /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		6EB6144124AE077900B6FA1F /* WordDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailsController.swift; sourceTree = "<group>"; };
+		6EB6144324AEFB7900B6FA1F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		9DABC4C00FBFAE2422E89D73 /* Pods-Words.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Words.release.xcconfig"; path = "Target Support Files/Pods-Words/Pods-Words.release.xcconfig"; sourceTree = "<group>"; };
 		A30C60205CED9D57C2196EB1 /* Pods_Words.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				6E775D51249B6978004BBD76 /* HomeViewController.swift */,
 				6E2A74DB24A3736900735BA7 /* NewWordController.swift */,
 				6EB6144124AE077900B6FA1F /* WordDetailsController.swift */,
+				6EB6144324AEFB7900B6FA1F /* UIImageViewExtension.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				6E775D52249B6978004BBD76 /* HomeViewController.swift in Sources */,
 				6E2A74DC24A3736900735BA7 /* NewWordController.swift in Sources */,
 				6E775D6D24A22567004BBD76 /* WordTableViewCell.swift in Sources */,
+				6EB6144424AEFB7900B6FA1F /* UIImageViewExtension.swift in Sources */,
 				6E308C3624AD8FFD00C5553A /* Model.xcdatamodeld in Sources */,
 				6EB6144224AE077900B6FA1F /* WordDetailsController.swift in Sources */,
 				6E775D4E249B6978004BBD76 /* AppDelegate.swift in Sources */,

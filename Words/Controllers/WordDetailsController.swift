@@ -15,7 +15,6 @@ class WordDetailsController: UIViewController {
     @IBOutlet weak var wordDefinition: UILabel!
     
     
-    private var imageDataTask: URLSessionDataTask?
     
     var selectedWord: WordInfo?
     
@@ -24,7 +23,7 @@ class WordDetailsController: UIViewController {
         
         let url = selectedWord?.bgImage!
         
-        downloadPhoto( url!)
+        bgImage.downloadPhoto( url!)
         wordTitle.text = selectedWord?.title!
         wordDefinition.text = selectedWord?.definition!
         
@@ -32,29 +31,30 @@ class WordDetailsController: UIViewController {
     
     
     
+//    private var imageDataTask: URLSessionDataTask?
+
     
     
-    
-    func downloadPhoto(_ url: URL) {
-        
-        
-        imageDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
-            
-            guard let strongSelf = self else { return }
-            
-            strongSelf.imageDataTask = nil
-            
-            guard let data = data, let image = UIImage(data: data), error == nil else { return }
-            
-            DispatchQueue.main.async {
-                UIView.transition(with: strongSelf.bgImage, duration: 0.25, options: [.transitionCrossDissolve], animations: {
-                    strongSelf.bgImage.image = image
-                }, completion: nil)
-            }
-        }
-        
-        imageDataTask?.resume()
-    }
+//    func downloadPhoto(_ url: URL) {
+//
+//
+//        imageDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
+//
+//            guard let strongSelf = self else { return }
+//
+//            strongSelf.imageDataTask = nil
+//
+//            guard let data = data, let image = UIImage(data: data), error == nil else { return }
+//
+//            DispatchQueue.main.async {
+//                UIView.transition(with: strongSelf.bgImage, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+//                    strongSelf.bgImage.image = image
+//                }, completion: nil)
+//            }
+//        }
+//
+//        imageDataTask?.resume()
+//    }
     
     
 }
